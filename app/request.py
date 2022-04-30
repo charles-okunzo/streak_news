@@ -35,4 +35,21 @@ def get_news_sources():
 
   return news_source_results
 
-  
+
+def process_results(response_list):
+  '''
+  process results function that processes results and returns news source objects
+  '''
+  news_source_results = []
+  for response in response_list:
+    id = response.get('id')
+    name = response.get('name')
+    description = response.get('description')
+    url = response.get('url')
+
+    if id:
+      news_source_obj = News_Source(id, name, description, url)
+
+      news_source_results.append(news_source_obj)
+
+  return news_source_results
