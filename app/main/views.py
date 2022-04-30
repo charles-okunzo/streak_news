@@ -8,4 +8,4 @@ def index():
   Index view function tat returns News Sources and their details
   '''
   title = 'Welcome to Streak News - All your favourite news sources in one place'
-  return render_template('index.html')
+  return render_template('index.html', title = title)
