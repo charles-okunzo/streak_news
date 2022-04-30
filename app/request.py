@@ -15,3 +15,24 @@ def configure_request(app):
   api_key = app.config['NEWS_API_KEY']
   base_url = app.config['NEWS_BASE_URL']
   source_url = app.config['NEWS_SOURCES_URL']
+
+
+def get_news_sources():
+  '''
+  get_news_sources function that returns a list of all news sources
+  '''
+  news_url = base_url.format(api_key)
+
+  with urllib.request.urlopen(news_url) as news_source:
+    news_source_data = news_source.read()
+    news_source_response = json.loads(news_source_data)
+
+    news_source_results = None
+
+    if news_source_response['sources']:
+      news_source_list = news_source_response['sources']
+      news_source_results = process_results(news_source_list)
+
+  return news_source_results
+
+  
