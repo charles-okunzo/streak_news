@@ -1,4 +1,6 @@
 from flask import render_template
+
+from app.request import get_news_sources
 from . import main
 
 
@@ -8,4 +10,5 @@ def index():
   Index view function tat returns News Sources and their details
   '''
   title = 'Welcome to Streak News - All your favourite news sources in one place'
-  return render_template('index.html', title = title)
+  news_sources = get_news_sources()
+  return render_template('index.html', title = title, sources = news_sources)

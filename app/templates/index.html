@@ -1,1 +1,11 @@
 {% extends 'base.html' %}
+
+
+{% block content %}
+
+  {% for source in sources %}
+   <li> {{source.name}}</li>
+   <p>{{source.description}}</p>
+  {% endfor %}
+
+{% endblock %}
