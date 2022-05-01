@@ -21,4 +21,4 @@ def news(news_id):
   '''
   news = get_news(news_id)
   title = f'Trending news articles'
-  return render_template('news.html', news = news, title = title)
+  return render_template('news.html', news = news, title = title, news_id = news_id)
