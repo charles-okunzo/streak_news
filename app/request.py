@@ -83,7 +83,7 @@ def process_news_results(response_list):
   '''
   news_results = []
   for response in response_list:
-    source_name = response.get('source_name')
+    source_name = response.get('source').get('name')
     title = response.get('title')
     author = response.get('author')
     description = response.get('description')
