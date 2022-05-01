@@ -60,7 +60,8 @@ def get_news(id):
   '''
   get news function that returns a list of news from a sources
   '''
-  get_news_url = source_url.format(id, api_key)
+  source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=70c8875846af4ec9b0b97c2c7b52e327'
+  get_news_url = source_url.format(id)
 
 
   with urllib.request.urlopen(get_news_url) as news:
@@ -91,7 +92,7 @@ def process_news_results(response_list):
     image = response.get('urlToImage')
     date = response.get('publishedAt')
 
-    if response.get('language') == 'en':
+    if image:
       news_obj = News(source_name, title, author, description, url, image, date)
 
       news_results.append(news_obj)

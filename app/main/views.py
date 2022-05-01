@@ -20,5 +20,5 @@ def news(news_id):
   news function that return a list of articles from a news source
   '''
   news = get_news(news_id)
-  title = f'Trending news from {news.source_name}'
+  title = f'Trending news articles'
   return render_template('news.html', news = news, title = title)
