@@ -53,3 +53,27 @@ def process_results(response_list):
       news_source_results.append(news_source_obj)
 
   return news_source_results
+
+
+
+def get_news(id):
+  '''
+  get news function that returns a list of news from a sources
+  '''
+  get_news_url = source_url.format(id, api_key)
+
+
+  with urllib.request.urlopen(get_news_url) as news:
+    news_data = news.read()
+    news_response = json.loads(news_data)
+
+
+    news_results = None
+
+    if news_response['articles']:
+      news_list = news_response['articles']
+      news_results = process_news_results(news_list)
+
+  return news_results
+
+
