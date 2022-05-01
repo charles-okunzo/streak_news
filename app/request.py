@@ -47,7 +47,7 @@ def process_results(response_list):
     description = response.get('description')
     url = response.get('url')
 
-    if id:
+    if response.get('language') == 'en':
       news_source_obj = News_Source(id, name, description, url)
 
       news_source_results.append(news_source_obj)

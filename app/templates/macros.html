@@ -1,0 +1,18 @@
+{% macro showNewsSources(sources) %}
+
+{% for source in sources %}
+  <div class="col-md-4">
+    <div class="card bg-dark">
+      <div class="card-header">
+        Featured
+      </div>
+      <div class="card-body">
+        <h3 class="card-title">{{source.name}}</h3>
+        <p class="card-text">{{source.description}}</p>
+        <a href="#" class="btn btn-danger">Read More...</a>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+{% endmacro %}
