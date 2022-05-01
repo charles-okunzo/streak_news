@@ -77,3 +77,23 @@ def get_news(id):
   return news_results
 
 
+def process_news_results(response_list):
+  '''
+  process results function that processes results and returns news source objects
+  '''
+  news_results = []
+  for response in response_list:
+    source_name = response.get('source_name')
+    title = response.get('title')
+    author = response.get('author')
+    description = response.get('description')
+    url = response.get('url')
+    image = response.get('urlToImage')
+    date = response.get('publishedAt')
+
+    if response.get('language') == 'en':
+      news_obj = News(source_name, title, author, description, url, image, date)
+
+      news_results.append(news_obj)
+
+  return news_results
