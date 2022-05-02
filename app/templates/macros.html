@@ -7,7 +7,7 @@
         Featured
       </div>
       <div class="card-body">
-        <h3 class="card-title">{{source.name}}</h3>
+        <h3 class="card-title fw-bold">{{source.name}}</h3>
         <p class="card-text">{{source.description}}</p>
         <a href="{{url_for('main.news', news_id = source.id)}}" class="btn btn-dark">Read More...</a>
       </div>
@@ -26,7 +26,7 @@
       </div>
       <div class="col-md-8">
         <div class="card-body">
-          <h5 class="card-title">{{news.title}}</h5>
+          <h3 class="card-title fw-bold">{{news.title}}</h3>
           <p class="card-text">{{news.description}}</p>
           <a href="{{news.url}}" class="btn btn-outline-primary">Read article...</a>
           <p class="card-text"><small class="text-muted">Posted on: {{news.date}}</small></p>

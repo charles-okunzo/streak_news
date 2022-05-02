@@ -23,7 +23,7 @@ def get_news_sources():
   '''
   news_url = base_url.format(api_key)
 
-  with urllib.request.urlopen("https://newsapi.org/v2/top-headlines/sources?apiKey=70c8875846af4ec9b0b97c2c7b52e327") as news_source:
+  with urllib.request.urlopen(news_url) as news_source:
     news_source_data = news_source.read()
     news_source_response = json.loads(news_source_data)
 
@@ -60,8 +60,7 @@ def get_news(id):
   '''
   get news function that returns a list of news from a sources
   '''
-  source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey=70c8875846af4ec9b0b97c2c7b52e327'
-  get_news_url = source_url.format(id)
+  get_news_url = source_url.format(id,api_key)
 
 
   with urllib.request.urlopen(get_news_url) as news:
