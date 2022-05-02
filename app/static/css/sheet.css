@@ -4,7 +4,7 @@
 }
 
 body{
-  background-image: url('../images/bg-nasa.avif');
+  background-image: linear-gradient(to bottom, rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('../images/breaking\ news.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
